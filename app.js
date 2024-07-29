@@ -18,12 +18,6 @@ const App = {
                 this.inputValue = ''
             }
         },
-        inputKeyPress(event) {
-            if (event.key == "Enter") {
-                this.addNewNote()
-            }
-
-        }
     }
 }
 
