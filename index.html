@@ -14,11 +14,11 @@
           <input
                   type="text"
                   v-bind:placeholder="placeholderString"
-                  v-baind:value="notes"
+                  v-bind:value="inputValue"
                   v-on:input="inputChangeHandler"
           >
         </div>
-        <button class="btn">Добавить</button>
+        <button class="btn" v-on:click="addNewNote">Добавить</button>
         <hr>
         <ul>
           <li class="list-item" v-for="myNote in notes">
