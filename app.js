@@ -9,7 +9,7 @@ const App = {
     },
     methods: {
         inputChangeHandler(event){
-            console.log(event.target.value);
+            // console.log(event.target.value);
             this.inputValue = event.target.value;
         },
         addNewNote() {
@@ -17,6 +17,12 @@ const App = {
                 this.notes.push(this.inputValue)
                 this.inputValue = ''
             }
+        },
+        inputKeyPress(event) {
+            if (event.key == "Enter") {
+                this.addNewNote()
+            }
+
         }
     }
 }
