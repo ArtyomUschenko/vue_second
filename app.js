@@ -21,9 +21,19 @@ const App = {
         toUpperCase(item) {
             return item.toUpperCase()
         },
+        doubleCount(){
+            console.log("doubleCount")
+            return this.notes.length * 2
+        },
         removeNote(idx) {
             this.notes.splice(idx, 1)
         }
+    },
+    computed: {
+        doubleCountComputer(){
+            console.log("doubleCountComputer")
+            return this.notes.length * 2
+        },
     }
 }
 
