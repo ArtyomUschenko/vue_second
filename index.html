@@ -20,10 +20,12 @@
           >
         </div>
         <button class="btn" v-on:click="addNewNote">Добавить</button>
+
         <hr>
         <ul>
-          <li class="list-item" v-for="myNote in notes">
-            {{myNote}}
+          <li class="list-item" v-for="(myNote, idx) in notes">
+           {{ idx + 1}}) {{myNote}}
+            <button class="btn danger" v-on:click="removeNote(idx)">Удалить</button>
           </li>
         </ul>
       </div>
