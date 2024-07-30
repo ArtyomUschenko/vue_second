@@ -16,8 +16,10 @@ const App = {
             if(this.inputValue != "") {
                 this.notes.push(this.inputValue)
                 this.inputValue = ''
-                console.log(this.notes)
             }
+        },
+        toUpperCase(item) {
+            return item.toUpperCase()
         },
         removeNote(idx) {
             this.notes.splice(idx, 1)
