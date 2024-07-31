@@ -14,6 +14,12 @@
 Vue.createApp({
     data: () => ({
         myHtml: "<h1>Ошибка</h1>",
-        title: "Список заметок"
+        title: "Список заметок",
+        person: {
+            firstName: "Artyom",
+            lastName: "Uschenko",
+            age: 30
+        },
+        items: [1, 2, 3, 4, 5],
     })
 }).mount("#app")
