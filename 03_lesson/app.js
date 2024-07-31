@@ -21,5 +21,10 @@ Vue.createApp({
             age: 30
         },
         items: [1, 2, 3, 4, 5],
-    })
+    }),
+    methods: {
+        stopPropagation(event) {
+            event.stopPropagation()
+        }
+    }
 }).mount("#app")
