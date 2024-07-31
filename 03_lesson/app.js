@@ -19,6 +19,12 @@ Vue.createApp({
     }), methods: {
         stopPropagation(event) {
             event.stopPropagation()
+        },
+        addItem(event) {
+            this.items.unshift(this.$refs.myInput.value)
+            this.$refs.myInput.value=""
+            // console.log(this.$refs.myInput.value)
+            console.log(event)
         }
     }, computed: {
         evenItems(){
