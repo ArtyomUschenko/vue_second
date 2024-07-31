@@ -25,10 +25,16 @@ Vue.createApp({
             this.$refs.myInput.value=""
             // console.log(this.$refs.myInput.value)
             console.log(event)
+        },
+        remove(i) {
+            this.items.splice(i, 1)
+        },
+        log(item) {
+            console.log(item)
         }
     }, computed: {
         evenItems(){
             return this.items.filter(i => i % 2 === 0 )
         }
-    }
+    },
 }).mount("#app")
