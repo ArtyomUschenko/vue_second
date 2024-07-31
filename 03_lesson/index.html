@@ -20,14 +20,14 @@
 <!--    <h2 v-pre> {{ title }}</h2>-->
 <!--    <button class="btn" @click="title = 'Списка нет'">Ввод</button>-->
 
-    <ul class="list">
+    <ul class="list" v-if="items.length !== 0">
       <li class="list-item" v-for="(item, i) in items" @click="items.splice(i, 1)">
         <strong>{{ item }}</strong>
       </li>
 
       <!--      <li class="list-item" v-for="(value, key) in person"><strong>{{key}}: </strong>  {{value}}</li>-->
     </ul>
-
+    <h3 v-show="items.length === 0">Список пуст</h3>
   </div>
 </div>
 
