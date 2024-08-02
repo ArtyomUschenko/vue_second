@@ -25,11 +25,38 @@ const app = Vue.createApp({
            h("button", {class: "btn",
            onclick: this.changeTitle}, "Записать" ),
        ])
+    },
+    beforeCreate() {
+        console.log("beforeCreate")
+    },
+    created() {
+        console.log("created")
+    },
+    beforeMount() {
+       console.log("beforeMount")
+    },
+    mounted() {
+       console.log("mounted")
+    },
+    beforeUnmount() {
+       console.log("beforeUnmount")
+    },
+    unmounted() {
+       console.log("unmounted")
+    },
+    beforeUpdate() {
+       console.log("beforeUpdate")
+    },
+    updated() {
+       console.log("updated")
     }
 })
 
 app.mount('#app')
 
+// setTimeout( () => {
+//     app.unmount()
+// }, 2000)
 // ====
 
 let title = "Vue"
@@ -61,4 +88,4 @@ const proxy = new Proxy(data, {
 })
 
 proxy.title = "Angular"
-console.log(proxy)
+// console.log(proxy)
