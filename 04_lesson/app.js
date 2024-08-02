@@ -8,6 +8,7 @@ const app = Vue.createApp({
    },
     methods: {
        changeTitle() {
+           console.log(this)
            this.title = "Информация"
        }
     },
@@ -28,3 +29,36 @@ const app = Vue.createApp({
 })
 
 app.mount('#app')
+
+// ====
+
+let title = "Vue"
+let message = "Заголовок: " + title
+
+
+// console.log(message)
+//
+// title = "Angular"
+//
+// console.log(message)
+
+const data = {
+    title: "Vue",
+    message: "Заголовок " + title
+}
+
+const proxy = new Proxy(data, {
+    // get(target, p) {
+    //     console.log(target)
+    //     console.log(p)
+    // },
+    set(target, key, value) {
+        if (key === "title") {
+            target.message = "Заголовок" + value
+        }
+        target[key] = value
+    }
+})
+
+proxy.title = "Angular"
+console.log(proxy)
